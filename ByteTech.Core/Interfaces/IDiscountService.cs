@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ByteTech.Core.Interfaces
 {
-    public interface IDiscountService
+   public interface IDiscountService
     {
         bool isEligibleForDiscount(User customer, int discount, Order order);
         decimal CalculateDiscountAmount(User customer, Discount discount, Order order);

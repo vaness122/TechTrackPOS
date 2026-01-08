@@ -13,3 +13,15 @@ D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\refint\Byte
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.BAL.pdb
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.BAL.genruntimeconfig.cache
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ref\ByteTech.BAL.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.Core.deps.json
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.Core.runtimeconfig.json
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.Shared.deps.json
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.Shared.runtimeconfig.json
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.Shared.exe
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.Core.exe
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.Core.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.Shared.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.Core.pdb
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.Shared.pdb
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.BAL.csproj.AssemblyReference.cache
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.4CD48FA5.Up2Date

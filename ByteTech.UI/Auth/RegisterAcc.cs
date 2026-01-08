@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ByteTech.UI
+namespace ByteTech.UI.Auth
 {
-    public partial class Login : UserControl
+    public partial class RegisterAcc : UserControl
     {
-        public Login()
+        public RegisterAcc()
         {
             InitializeComponent();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
