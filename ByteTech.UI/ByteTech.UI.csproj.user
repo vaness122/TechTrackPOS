@@ -22,5 +22,8 @@
     <Compile Update="Product_Menu\Product_Master.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Product_Menu\Stock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
