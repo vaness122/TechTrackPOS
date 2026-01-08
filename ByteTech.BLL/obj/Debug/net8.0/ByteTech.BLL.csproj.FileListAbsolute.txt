@@ -1,0 +1,15 @@
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.BLL.exe
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.BLL.deps.json
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.BLL.runtimeconfig.json
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.BLL.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\bin\Debug\net8.0\ByteTech.BLL.pdb
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.BLL.AssemblyInfoInputs.cache
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.BLL.AssemblyInfo.cs
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.BLL.csproj.CoreCompileInputs.cache
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.BLL.sourcelink.json
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.BLL.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\refint\ByteTech.BLL.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.BLL.pdb
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ByteTech.BLL.genruntimeconfig.cache
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.BLL\obj\Debug\net8.0\ref\ByteTech.BLL.dll
