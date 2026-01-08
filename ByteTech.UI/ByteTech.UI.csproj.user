@@ -1,16 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Auth\LoginAcc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Auth\RegisterAcc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Customer\Customer Entry.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Login.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Auth\Register.cs">
+    <Compile Update="Dashboard\Admin_Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Product_Menu\Product_Master.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

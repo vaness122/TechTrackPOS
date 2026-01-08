@@ -144,3 +144,10 @@ D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.Infrastructure\obj\Debug\net8.0\
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.Infrastructure\obj\Debug\net8.0\ByteTech.Infrastructure.pdb
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.Infrastructure\obj\Debug\net8.0\ByteTech.Infrastructure.genruntimeconfig.cache
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.Infrastructure\obj\Debug\net8.0\ref\ByteTech.Infrastructure.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.Infrastructure\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.Infrastructure\bin\Debug\net8.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.Infrastructure\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.Infrastructure\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.Infrastructure\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.Infrastructure\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.Infrastructure\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll

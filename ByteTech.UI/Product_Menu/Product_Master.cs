@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ByteTech.UI
+namespace ByteTech.UI.Product_Menu
 {
-    public partial class Register : UserControl
+    public partial class Product_Master : UserControl
     {
-        public Register()
+        public Product_Master()
         {
             InitializeComponent();
         }

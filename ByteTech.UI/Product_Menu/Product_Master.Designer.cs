@@ -1,6 +1,6 @@
-﻿namespace ByteTech.UI
+﻿namespace ByteTech.UI.Product_Menu
 {
-    partial class Register
+    partial class Product_Master
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,41 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            panel2 = new Panel();
             SuspendLayout();
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.SteelBlue;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(950, 21);
-            panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.OldLace;
-            panel2.Location = new Point(250, 203);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(451, 345);
-            panel2.TabIndex = 2;
-            // 
-            // Register
+            // Product_Master
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FloralWhite;
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Name = "Register";
-            Size = new Size(950, 750);
+            Name = "Product_Master";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private Panel panel2;
     }
 }
