@@ -13,6 +13,9 @@
     <Compile Update="Dashboard\Admin_Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Dashboard\DiscountListForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Form.cs">
       <SubType>UserControl</SubType>
     </Compile>

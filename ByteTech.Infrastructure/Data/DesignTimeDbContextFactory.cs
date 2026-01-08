@@ -10,7 +10,7 @@ namespace ByteTech.Infrastructure.Data
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var connectionString = Environment.GetEnvironmentVariable("DefaultConnection")
-                ?? "Server=DESKTOP-MS3T4S8;Database=ByteTechPOS;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True";
+                ?? "Server=localhost;Database=ByteTechPOS;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True";
 
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
 

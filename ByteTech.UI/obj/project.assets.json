@@ -1,30 +1,67 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {}
+    "net8.0-windows7.0": {
+      "ByteTech.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "ByteTech.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ByteTech.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ByteTech.Core.dll": {}
+        }
+      },
+      "ByteTech.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ByteTech.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ByteTech.Shared.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ByteTech.Core/1.0.0": {
+      "type": "project",
+      "path": "../ByteTech.Core/ByteTech.Core.csproj",
+      "msbuildProject": "../ByteTech.Core/ByteTech.Core.csproj"
+    },
+    "ByteTech.Shared/1.0.0": {
+      "type": "project",
+      "path": "../ByteTech.Shared/ByteTech.Shared.csproj",
+      "msbuildProject": "../ByteTech.Shared/ByteTech.Shared.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0-windows7.0": []
+    "net8.0-windows7.0": [
+      "ByteTech.Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\Charlie\\.nuget\\packages\\": {},
+    "C:\\Users\\Ray\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.UI\\ByteTech.UI.csproj",
+      "projectUniqueName": "C:\\Users\\Ray\\source\\repos\\TechTrackPOS\\ByteTech.UI\\ByteTech.UI.csproj",
       "projectName": "ByteTech.UI",
-      "projectPath": "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.UI\\ByteTech.UI.csproj",
-      "packagesPath": "C:\\Users\\Charlie\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.UI\\obj\\",
+      "projectPath": "C:\\Users\\Ray\\source\\repos\\TechTrackPOS\\ByteTech.UI\\ByteTech.UI.csproj",
+      "packagesPath": "C:\\Users\\Ray\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ray\\source\\repos\\TechTrackPOS\\ByteTech.UI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Charlie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ray\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -38,7 +75,11 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Ray\\source\\repos\\TechTrackPOS\\ByteTech.Core\\ByteTech.Core.csproj": {
+              "projectPath": "C:\\Users\\Ray\\source\\repos\\TechTrackPOS\\ByteTech.Core\\ByteTech.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -51,7 +92,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -75,7 +116,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

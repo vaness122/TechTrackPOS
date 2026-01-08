@@ -74,11 +74,11 @@ namespace ByteTech.Infrastructure.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("MaximumDiscountAmount")
-                        .HasColumnType("int");
+                    b.Property<decimal?>("MaximumDiscountAmount")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("MinimumOrderAmount")
-                        .HasColumnType("int");
+                    b.Property<decimal?>("MinimumOrderAmount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -86,7 +86,7 @@ namespace ByteTech.Infrastructure.Migrations
                     b.Property<int>("UsageCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsageLimit")
+                    b.Property<int?>("UsageLimit")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Value")
@@ -117,9 +117,6 @@ namespace ByteTech.Infrastructure.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("DiscountId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("DiscountId1")
                         .HasColumnType("int");
 
                     b.Property<string>("Notes")
@@ -156,8 +153,6 @@ namespace ByteTech.Infrastructure.Migrations
                     b.HasIndex("CustomerId");
 
                     b.HasIndex("DiscountId");
-
-                    b.HasIndex("DiscountId1");
 
                     b.HasIndex("OrderNumber")
                         .IsUnique();
@@ -394,13 +389,9 @@ namespace ByteTech.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("ByteTech.Core.Models.Discount", "Discount")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("DiscountId")
                         .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("ByteTech.Core.Models.Discount", null)
-                        .WithMany("Orders")
-                        .HasForeignKey("DiscountId1");
 
                     b.HasOne("ByteTech.Core.Models.User", null)
                         .WithMany("Orders")

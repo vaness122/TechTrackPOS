@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "SLlwwaO9cNY=",
+  "dgSpecHash": "jVf86umMYUo=",
   "success": true,
-  "projectFilePath": "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.Core\\ByteTech.Core.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Ray\\source\\repos\\TechTrackPOS\\ByteTech.Core\\ByteTech.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ray\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\Ray\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\Ray\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\Ray\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.22\\microsoft.netcore.app.host.win-x64.8.0.22.nupkg.sha512"
+  ],
   "logs": []
 }

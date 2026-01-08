@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ByteTech.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2f4401e61f05ba6d4803bf0ea6e1a2fae23f9f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d7546ad8a26309b77c81f39721d333219fd79dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("ByteTech.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ByteTech.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
