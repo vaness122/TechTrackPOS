@@ -1,4 +1,3 @@
-D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.UI\obj\Debug\net8.0-windows\ByteTech.UI.Login.resources
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.UI\obj\Debug\net8.0-windows\ByteTech.UI.csproj.GenerateResource.cache
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.UI\obj\Debug\net8.0-windows\ByteTech.UI.GeneratedMSBuildEditorConfig.editorconfig
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.UI\obj\Debug\net8.0-windows\ByteTech.UI.AssemblyInfoInputs.cache
@@ -21,3 +20,6 @@ D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.UI\obj\Debug\net8.0-windows\ref\
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.UI\obj\Debug\net8.0-windows\ByteTech.UI.Dashboard.Admin_Dashboard.resources
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.UI\obj\Debug\net8.0-windows\ByteTech.UI.Product_Menu.Product_Master.resources
 D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.UI\obj\Debug\net8.0-windows\ByteTech.UI.Auth.RegisterAcc.resources
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.UI\obj\Debug\net8.0-windows\ByteTech.UI.Auth.LoginAcc.resources
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.UI\obj\Debug\net8.0-windows\ByteTech.UI.Main.resources
+D:\Users\Charlie\Source\Repos\ByteTech\ByteTech.UI\obj\Debug\net8.0-windows\ByteTech.UI.Product_Menu.Stock.resources
