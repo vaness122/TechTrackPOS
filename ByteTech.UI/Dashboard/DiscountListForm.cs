@@ -8,7 +8,7 @@ using ByteTech.Core.Models;
 
 namespace ByteTech.UI.Dashboard
 {
-  
+
     public partial class DiscountListForm : Form
     {
         private readonly HttpClient _httpClient = new HttpClient();
@@ -16,7 +16,7 @@ namespace ByteTech.UI.Dashboard
         public DiscountListForm()
         {
             InitializeComponent();
-       
+
             this.Load += DiscountListForm_Load;
         }
 
@@ -24,15 +24,15 @@ namespace ByteTech.UI.Dashboard
         {
             try
             {
-             
+
                 var discounts = await _httpClient.GetFromJsonAsync<List<Discount>>("https://localhost:7296/api/Discounts");
 
                 if (discounts != null)
                 {
-                   
+
                     dgvDiscounts.DataSource = discounts;
 
-                 
+
                     if (dgvDiscounts.Columns.Contains("Orders"))
                         dgvDiscounts.Columns["Orders"].Visible = false;
                 }
@@ -41,6 +41,11 @@ namespace ByteTech.UI.Dashboard
             {
                 MessageBox.Show($"Error fetching data: {ex.Message}", "API Connection Error");
             }
+        }
+
+        private void dgvDiscounts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

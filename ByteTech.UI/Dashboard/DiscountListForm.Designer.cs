@@ -39,6 +39,7 @@
             dgvDiscounts.Name = "dgvDiscounts";
             dgvDiscounts.Size = new Size(800, 447);
             dgvDiscounts.TabIndex = 0;
+            dgvDiscounts.CellContentClick += dgvDiscounts_CellContentClick;
             // 
             // DiscountListForm
             // 
