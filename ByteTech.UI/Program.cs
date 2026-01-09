@@ -1,6 +1,8 @@
+using ByteTech.UI.Dashboard;
+
 namespace ByteTech.UI
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
@@ -11,7 +13,7 @@ namespace ByteTech.UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run();
+            Application.Run(new Admin_Dashboard());
         }
     }
 }
