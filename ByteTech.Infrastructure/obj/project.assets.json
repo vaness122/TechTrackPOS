@@ -1724,16 +1724,6 @@
         "runtime": {
           "bin/placeholder/ByteTech.Shared.dll": {}
         }
-      },
-      "ByteTech.UI/1.0.0": {
-        "type": "project",
-        "framework": "Unsupported,Version=v0.0",
-        "compile": {
-          "bin/placeholder/ByteTech.UI.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ByteTech.UI.dll": {}
-        }
       }
     }
   },
@@ -4574,17 +4564,11 @@
       "type": "project",
       "path": "../ByteTech.Shared/ByteTech.Shared.csproj",
       "msbuildProject": "../ByteTech.Shared/ByteTech.Shared.csproj"
-    },
-    "ByteTech.UI/1.0.0": {
-      "type": "project",
-      "path": "../ByteTech.UI/ByteTech.UI.csproj",
-      "msbuildProject": "../ByteTech.UI/ByteTech.UI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "ByteTech.Core >= 1.0.0",
-      "ByteTech.UI >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
@@ -4628,9 +4612,6 @@
           "projectReferences": {
             "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.Core\\ByteTech.Core.csproj": {
               "projectPath": "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.Core\\ByteTech.Core.csproj"
-            },
-            "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.UI\\ByteTech.UI.csproj": {
-              "projectPath": "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.UI\\ByteTech.UI.csproj"
             }
           }
         }
@@ -4703,16 +4684,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project ByteTech.UI is not compatible with net8.0 (.NETCoreApp,Version=v8.0). Project ByteTech.UI supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "ByteTech.UI",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

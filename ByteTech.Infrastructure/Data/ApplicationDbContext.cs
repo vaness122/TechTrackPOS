@@ -17,6 +17,10 @@ namespace ByteTech.Infrastructure.Data
         public DbSet<OrderItem> OrderItems => Set<OrderItem>();
         public DbSet<Payment> Payments => Set<Payment>();
         public DbSet<Discount> Discounts => Set<Discount>();
+        public DbSet <Location> Locations => Set<Location>();
+        public DbSet<Inventory> Inventories => Set<Inventory>();    
+
+        public DbSet<Material> Materials => Set<Material>();
 
 
 
@@ -96,7 +100,7 @@ namespace ByteTech.Infrastructure.Data
             modelBuilder.Entity<Product>()
                 .HasIndex(p => p.Barcode)
                 .IsUnique()
-                .HasFilter("[Barcode IS NOT NULL");
+                .HasFilter("[Barcode] IS NOT NULL");
 
 
 
@@ -154,6 +158,63 @@ namespace ByteTech.Infrastructure.Data
             modelBuilder.Entity<Discount>()
                 .Property(d => d.Value)
                 .HasPrecision(18, 2);
+
+
+            //location
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Location)
+                .WithMany()
+                .HasForeignKey(p => p.LocationId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+         modelBuilder.Entity<Product>()
+        .HasOne(p => p.Material)
+        .WithMany()
+        .HasForeignKey(p => p.MaterialId)
+        .OnDelete(DeleteBehavior.SetNull);
+
+         modelBuilder.Entity<Location>()
+        .HasIndex(l => l.Name)
+        .IsUnique();
+
+            modelBuilder.Entity<Material>()
+            .HasIndex(m => m.Name)
+            .IsUnique();
+
+            modelBuilder.Entity<Material>()
+       .Property(m => m.Cost)
+       .HasPrecision(18, 2);
+
+            //inventory
+
+            modelBuilder.Entity<Inventory>()
+        .HasIndex(i => new { i.ProductId, i.LocationId })
+        .IsUnique();
+
+            modelBuilder.Entity<Inventory>()
+                .Property(i => i.Quantity)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Inventory>()
+                .HasOne(i => i.Product)
+                .WithMany()
+                .HasForeignKey(i => i.ProductId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Inventory>()
+                .HasOne(i => i.Location)
+                .WithMany()
+                .HasForeignKey(i => i.LocationId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
+
+
+
+
+
+
         }
     }
 }

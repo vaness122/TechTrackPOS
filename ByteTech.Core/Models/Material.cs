@@ -12,6 +12,7 @@ namespace ByteTech.Core.Models
         public int Id { get; set; }
         public string Name { get; set; } //plastic , organic etc
         [StringLength(200)]
+        public decimal Cost { get; set; }
         public string Description { get; set; }
     }
 }
