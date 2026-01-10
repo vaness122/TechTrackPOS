@@ -21,7 +21,11 @@ namespace ByteTech.Core.Models
         public decimal? MinimumOrderAmount { get; set; }
         public decimal? MaximumDiscountAmount { get; set; }
         public int? UsageLimit { get; set; }
+
         public int UsageCount { get; set; } = 0;
+
+    
+     
 
         [JsonIgnore]
         public ICollection<Order> Orders { get; set; } = new List<Order>();
