@@ -18,6 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\ByteTech.BLL\ByteTech.BAL.csproj" />
 		<ProjectReference Include="..\ByteTech.Infrastructure\ByteTech.Infrastructure.csproj" />
 	</ItemGroup>
 </Project>

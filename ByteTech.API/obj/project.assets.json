@@ -1763,6 +1763,19 @@
           }
         }
       },
+      "ByteTech.BAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "ByteTech.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ByteTech.BAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ByteTech.BAL.dll": {}
+        }
+      },
       "ByteTech.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -4752,6 +4765,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "ByteTech.BAL/1.0.0": {
+      "type": "project",
+      "path": "../ByteTech.BLL/ByteTech.BAL.csproj",
+      "msbuildProject": "../ByteTech.BLL/ByteTech.BAL.csproj"
+    },
     "ByteTech.Core/1.0.0": {
       "type": "project",
       "path": "../ByteTech.Core/ByteTech.Core.csproj",
@@ -4770,6 +4788,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "ByteTech.BAL >= 1.0.0",
       "ByteTech.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0",
@@ -4810,6 +4829,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.BLL\\ByteTech.BAL.csproj": {
+              "projectPath": "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.BLL\\ByteTech.BAL.csproj"
+            },
             "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.Infrastructure\\ByteTech.Infrastructure.csproj": {
               "projectPath": "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.Infrastructure\\ByteTech.Infrastructure.csproj"
             }

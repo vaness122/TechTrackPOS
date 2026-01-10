@@ -15,6 +15,8 @@ namespace ByteTech.Core.Models
         public int Id { get; set; }
         public string Name { get; set; }
         [Required,StringLength(200)]
+
+
         public string Description { get; set; } = String.Empty;
         public bool Vatable { get; set; } = true;
 
@@ -55,6 +57,7 @@ namespace ByteTech.Core.Models
 
         public bool TrackInventory { get; set; }
         public Location? Location { get; set; }
+        public int? LocationId {  get; set; }
         public Material? Material { get; set; }
         public int? MaterialId { get; set; }
         public byte[]? Picture { get; set; }
