@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ByteTech.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21ad5db4e796d5c8bdec61fcdfb939b3ff1bb06c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81b63b3423c374411e99b263ca4e4f59c7c29511")]
 [assembly: System.Reflection.AssemblyProductAttribute("ByteTech.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ByteTech.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

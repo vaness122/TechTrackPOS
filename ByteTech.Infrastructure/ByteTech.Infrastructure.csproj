@@ -25,6 +25,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\ByteTech.Core\ByteTech.Core.csproj" />
+		<ProjectReference Include="..\ByteTech.UI\ByteTech.UI.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "1r+bW0po67Q=",
-  "success": true,
+  "dgSpecHash": "m4n3KpfUgJs=",
+  "success": false,
   "projectFilePath": "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.Infrastructure\\ByteTech.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Charlie\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
@@ -92,5 +92,17 @@
     "C:\\Users\\Charlie\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Charlie\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project ByteTech.UI is not compatible with net8.0 (.NETCoreApp,Version=v8.0). Project ByteTech.UI supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "projectPath": "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.Infrastructure\\ByteTech.Infrastructure.csproj",
+      "filePath": "D:\\Users\\Charlie\\Source\\Repos\\ByteTech\\ByteTech.Infrastructure\\ByteTech.Infrastructure.csproj",
+      "libraryId": "ByteTech.UI",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

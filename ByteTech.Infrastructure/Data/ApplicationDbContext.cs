@@ -18,6 +18,8 @@ namespace ByteTech.Infrastructure.Data
         public DbSet<Payment> Payments => Set<Payment>();
         public DbSet<Discount> Discounts => Set<Discount>();
 
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -78,9 +80,28 @@ namespace ByteTech.Infrastructure.Data
                 .HasIndex(u => u.UserName)
                 .IsUnique();
 
+
+
+
+
+
             modelBuilder.Entity<Product>()
                 .HasIndex(p => p.SKU)
                 .IsUnique();
+
+            modelBuilder.Entity<Product>()
+                .HasIndex(p => p.LookupCode)
+                .IsUnique();
+
+            modelBuilder.Entity<Product>()
+                .HasIndex(p => p.Barcode)
+                .IsUnique()
+                .HasFilter("[Barcode IS NOT NULL");
+
+
+
+
+
 
             modelBuilder.Entity<Category>()
                 .HasIndex(c => c.Name)
