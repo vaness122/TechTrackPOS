@@ -7,5 +7,17 @@
         {
             InitializeComponent();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            DiscountListForm discountListForm = new DiscountListForm();
+            discountListForm.ShowDialog();
+
+        }
     }
 }

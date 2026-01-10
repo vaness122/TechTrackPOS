@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ByteTech.BAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1c3ea564c0618fb9524ab60eb30acec3c095e60")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c46acaf113d08b0e8d8a18d42d4ed4eac95f08a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ByteTech.BAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ByteTech.BAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

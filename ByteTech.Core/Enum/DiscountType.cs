@@ -8,7 +8,8 @@ namespace ByteTech.Shared.Enum
 {
     public enum DiscountType
     {
-        Percentage,
-        FixedAmount
+        Percentage = 0,
+        FlatAmount = 1,
+        Other = 2
     }
 }
