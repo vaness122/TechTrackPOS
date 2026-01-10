@@ -48,8 +48,7 @@ namespace ByteTech.Infrastructure.Data
 
             modelBuilder.Entity<Order>()
                 .HasOne(o => o.Discount)
-                .WithMany()
-                .HasForeignKey(o => o.DiscountId)
+                .WithMany(d => d.Orders) 
                 .OnDelete(DeleteBehavior.SetNull);
 
             modelBuilder.Entity<Order>()

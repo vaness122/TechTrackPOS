@@ -5,10 +5,7 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using ByteTech.Infrastructure.Data;
 using ByteTech.Core.Interfaces;
-using ByteTech.Infrastructure.Repositories;
 using ByteTech.BAL.Services;
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 if (builder.Environment.IsDevelopment())
@@ -22,18 +19,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-
-//repos
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
-
-
-//services
-builder.Services.AddScoped<IProductService, ProductService>();
-
-
-
-
+builder.Services.AddScoped<IDiscountService, DiscountService>();
 
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 var secretKey = jwtSettings["Secret"]

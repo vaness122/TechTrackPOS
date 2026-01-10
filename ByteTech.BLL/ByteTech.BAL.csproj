@@ -8,7 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ByteTech.Core\ByteTech.Core.csproj" />
+    <ProjectReference Include="..\ByteTech.Infrastructure\ByteTech.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

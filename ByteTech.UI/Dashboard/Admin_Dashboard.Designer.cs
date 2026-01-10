@@ -55,6 +55,9 @@
             label7 = new Label();
             button1 = new Button();
             button2 = new Button();
+            btnDiscount = new Button();
+            pictureBox6 = new PictureBox();
+            label10 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -70,6 +73,7 @@
             panel10.SuspendLayout();
             panel9.SuspendLayout();
             panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -336,10 +340,45 @@
             button2.Text = "Exit";
             button2.UseVisualStyleBackColor = false;
             // 
+            // btnDiscount
+            // 
+            btnDiscount.BackColor = SystemColors.Window;
+            btnDiscount.ForeColor = SystemColors.ActiveCaptionText;
+            btnDiscount.Location = new Point(12, 136);
+            btnDiscount.Name = "btnDiscount";
+            btnDiscount.Size = new Size(119, 81);
+            btnDiscount.TabIndex = 11;
+            btnDiscount.UseVisualStyleBackColor = false;
+            btnDiscount.Click += btnDiscount_Click;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.InitialImage = null;
+            pictureBox6.Location = new Point(51, 142);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(36, 37);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 2;
+            pictureBox6.TabStop = false;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(48, 182);
+            label10.Name = "label10";
+            label10.Size = new Size(54, 15);
+            label10.TabIndex = 12;
+            label10.Text = "Discount";
+            // 
             // Admin_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(983, 509);
+            Controls.Add(label10);
+            Controls.Add(pictureBox6);
+            Controls.Add(btnDiscount);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(panel7);
@@ -350,7 +389,6 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Admin_Dashboard";
-            Size = new Size(999, 548);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -375,7 +413,9 @@
             panel9.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -406,5 +446,8 @@
         private PictureBox pictureBox5;
         private Button button1;
         private Button button2;
+        private Button btnDiscount;
+        private PictureBox pictureBox6;
+        private Label label10;
     }
 }

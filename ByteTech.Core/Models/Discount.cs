@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ByteTech.Core.Models
@@ -17,11 +18,12 @@ namespace ByteTech.Core.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public bool IsActive { get; set; } = true;
-        public int? MinimumOrderAmount { get; set; }
-        public int? MaximumDiscountAmount { get; set; }
-        public int UsageLimit { get; set; }
+        public decimal? MinimumOrderAmount { get; set; }
+        public decimal? MaximumDiscountAmount { get; set; }
+        public int? UsageLimit { get; set; }
         public int UsageCount { get; set; } = 0;
 
+        [JsonIgnore]
         public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }
