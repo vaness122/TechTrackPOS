@@ -1,11 +1,12 @@
+using ByteTech.BAL.Services;
+using ByteTech.Core.Interfaces;
+using ByteTech.Infrastructure.Data;
+using ByteTech.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using ByteTech.Infrastructure.Data;
-using ByteTech.Core.Interfaces;
-using ByteTech.BAL.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 if (builder.Environment.IsDevelopment())
@@ -32,7 +33,7 @@ var expiryInMinutes = jwtSettings.GetValue<int>("ExpiryInMinutes", 60);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo

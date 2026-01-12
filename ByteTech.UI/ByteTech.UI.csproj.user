@@ -7,10 +7,13 @@
     <Compile Update="Auth\RegisterAcc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Customer\Customer Entry.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Dashboard\Admin_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dashboard\CustomerAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dashboard\CustomerForms.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Dashboard\DiscountEntryForm.cs">

@@ -10,9 +10,10 @@ namespace ByteTech.Core.Enum
     {
         Regular = 0,
         SeniorCitizen = 1,
-        Student = 2,
-        Employee = 3,
-        Wholesale = 4,
-        FirstTime = 5
+        PWD = 2,
+        Student = 3,
+        Employee = 4,
+        Wholesale = 5,
+        FirstTime = 6
     }
 }

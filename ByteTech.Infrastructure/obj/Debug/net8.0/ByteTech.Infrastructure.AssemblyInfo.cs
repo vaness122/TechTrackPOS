@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ByteTech.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd879fd93d4c93ec9e1d4ff0ffa3301f9b6178c9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ceec2fbbd665e5d8583864fbad24437adf4746d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ByteTech.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ByteTech.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
