@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ByteTech.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260109043654_AddedFieldsToProductEnt")]
-    partial class AddedFieldsToProductEnt
+    [Migration("20260112091757_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -52,6 +52,67 @@ namespace ByteTech.Infrastructure.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("ByteTech.Core.Models.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Balance")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("BusinessStyle")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<decimal>("CreditLimit")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("IsInactive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<byte[]>("Picture")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("PictureFileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PictureFileType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PriceLevel")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Remarks")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<int>("ServerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TIN")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name");
+
+                    b.ToTable("Customers");
+                });
+
             modelBuilder.Entity("ByteTech.Core.Models.Discount", b =>
                 {
                     b.Property<int>("Id")
@@ -77,11 +138,13 @@ namespace ByteTech.Infrastructure.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("MaximumDiscountAmount")
-                        .HasColumnType("int");
+                    b.Property<decimal?>("MaximumDiscountAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("MinimumOrderAmount")
-                        .HasColumnType("int");
+                    b.Property<decimal?>("MinimumOrderAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -89,7 +152,7 @@ namespace ByteTech.Infrastructure.Migrations
                     b.Property<int>("UsageCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsageLimit")
+                    b.Property<int?>("UsageLimit")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Value")
@@ -102,6 +165,40 @@ namespace ByteTech.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("Discounts");
+                });
+
+            modelBuilder.Entity("ByteTech.Core.Models.Inventory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("int");
+
+                    b.Property<int>("ReservedStock")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocationId");
+
+                    b.HasIndex("ProductId", "LocationId")
+                        .IsUnique();
+
+                    b.ToTable("Inventories");
                 });
 
             modelBuilder.Entity("ByteTech.Core.Models.Location", b =>
@@ -123,11 +220,14 @@ namespace ByteTech.Infrastructure.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Location");
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Locations");
                 });
 
             modelBuilder.Entity("ByteTech.Core.Models.Material", b =>
@@ -138,18 +238,25 @@ namespace ByteTech.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Description")
-                        .IsRequired()
+                    b.Property<decimal>("Cost")
                         .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Material");
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Materials");
                 });
 
             modelBuilder.Entity("ByteTech.Core.Models.Order", b =>
@@ -168,9 +275,6 @@ namespace ByteTech.Infrastructure.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("DiscountId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("DiscountId1")
                         .HasColumnType("int");
 
                     b.Property<string>("Notes")
@@ -207,8 +311,6 @@ namespace ByteTech.Infrastructure.Migrations
                     b.HasIndex("CustomerId");
 
                     b.HasIndex("DiscountId");
-
-                    b.HasIndex("DiscountId1");
 
                     b.HasIndex("OrderNumber")
                         .IsUnique();
@@ -309,7 +411,7 @@ namespace ByteTech.Infrastructure.Migrations
 
                     b.Property<string>("Barcode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("BasicCommodity")
                         .HasColumnType("bit");
@@ -318,6 +420,7 @@ namespace ByteTech.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Cost")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("CostPrice")
@@ -392,15 +495,19 @@ namespace ByteTech.Infrastructure.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal>("PriceA")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("PriceB")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("PriceC")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("RegularPrice")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Remarks")
@@ -434,6 +541,7 @@ namespace ByteTech.Infrastructure.Migrations
                         .HasColumnType("bit");
 
                     b.Property<decimal>("WholeSalePrice")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<bool>("isPWD")
@@ -444,9 +552,16 @@ namespace ByteTech.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Barcode")
+                        .IsUnique()
+                        .HasFilter("[Barcode] IS NOT NULL");
+
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("LocationId");
+
+                    b.HasIndex("LookupCode")
+                        .IsUnique();
 
                     b.HasIndex("MaterialId");
 
@@ -534,6 +649,25 @@ namespace ByteTech.Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("ByteTech.Core.Models.Inventory", b =>
+                {
+                    b.HasOne("ByteTech.Core.Models.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ByteTech.Core.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Location");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("ByteTech.Core.Models.Order", b =>
                 {
                     b.HasOne("ByteTech.Core.Models.User", "Customer")
@@ -542,13 +676,9 @@ namespace ByteTech.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("ByteTech.Core.Models.Discount", "Discount")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("DiscountId")
                         .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("ByteTech.Core.Models.Discount", null)
-                        .WithMany("Orders")
-                        .HasForeignKey("DiscountId1");
 
                     b.HasOne("ByteTech.Core.Models.User", null)
                         .WithMany("Orders")
@@ -599,11 +729,13 @@ namespace ByteTech.Infrastructure.Migrations
 
                     b.HasOne("ByteTech.Core.Models.Location", "Location")
                         .WithMany()
-                        .HasForeignKey("LocationId");
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ByteTech.Core.Models.Material", "Material")
                         .WithMany()
-                        .HasForeignKey("MaterialId");
+                        .HasForeignKey("MaterialId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Category");
 

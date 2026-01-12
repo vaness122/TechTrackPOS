@@ -12,14 +12,15 @@ namespace ByteTech.Infrastructure.Data
 
         public DbSet<User> Users => Set<User>();
         public DbSet<Product> Products => Set<Product>();
+        public DbSet<Customer> Customers => Set<Customer>();
         public DbSet<Category> Categories => Set<Category>();
         public DbSet<Order> Orders => Set<Order>();
         public DbSet<OrderItem> OrderItems => Set<OrderItem>();
         public DbSet<Payment> Payments => Set<Payment>();
         public DbSet<Discount> Discounts => Set<Discount>();
         public DbSet <Location> Locations => Set<Location>();
-        public DbSet<Inventory> Inventories => Set<Inventory>();    
-
+        public DbSet<Inventory> Inventories => Set<Inventory>();
+        
         public DbSet<Material> Materials => Set<Material>();
 
 
@@ -28,6 +29,40 @@ namespace ByteTech.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Product>(entity => {
+                entity.Property(p => p.Cost).HasPrecision(18, 2);
+                entity.Property(p => p.RegularPrice).HasPrecision(18, 2);
+                entity.Property(p => p.WholeSalePrice).HasPrecision(18, 2);
+                entity.Property(p => p.PriceA).HasPrecision(18, 2);
+                entity.Property(p => p.PriceB).HasPrecision(18, 2);
+                entity.Property(p => p.PriceC).HasPrecision(18, 2);
+                entity.Property(p => p.CostPrice).HasPrecision(18, 2);
+                entity.Property(p => p.SellingPrice).HasPrecision(18, 2);
+            });
+
+
+            modelBuilder.Entity<Discount>(entity => {
+                entity.Property(d => d.MaximumDiscountAmount).HasPrecision(18, 2);
+                entity.Property(d => d.MinimumOrderAmount).HasPrecision(18, 2);
+                entity.Property(d => d.Value).HasPrecision(18, 2);
+            });
+
+            modelBuilder.Entity<Customer>(entity =>
+            {
+                entity.Property(c => c.CreditLimit).HasPrecision(18, 2);
+                entity.Property(c => c.Balance).HasPrecision(18, 2);
+                entity.Property(c => c.Picture).HasColumnType("varbinary(max)");
+                entity.HasIndex(c => c.Name);
+            });
+
+            modelBuilder.Entity<Order>()
+                .HasOne(o => o.Discount)
+                .WithMany(d => d.Orders)
+                .HasForeignKey("DiscountId")
+                .OnDelete(DeleteBehavior.SetNull);
+
+
+            //////////////////////
             modelBuilder.Entity<Category>()
                 .HasMany(c => c.Products)
                 .WithOne(p => p.Category)
@@ -82,11 +117,7 @@ namespace ByteTech.Infrastructure.Data
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.UserName)
                 .IsUnique();
-
-
-
-
-
+    
 
             modelBuilder.Entity<Product>()
                 .HasIndex(p => p.SKU)
@@ -207,7 +238,16 @@ namespace ByteTech.Infrastructure.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
 
+            modelBuilder.Entity<Customer>()
+                .Property(c => c.CreditLimit)
+                .HasPrecision(18, 2);
 
+            modelBuilder.Entity<Customer>()
+                .Property(c => c.Balance)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Customer>()
+                .HasIndex(c => c.Name);
 
 
 

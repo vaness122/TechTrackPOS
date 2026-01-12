@@ -27,6 +27,31 @@ namespace ByteTech.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Customers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    TIN = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    BusinessStyle = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PriceLevel = table.Column<int>(type: "int", nullable: false),
+                    Picture = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    PictureFileName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PictureFileType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Remarks = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    CreditLimit = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    Balance = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    IsInactive = table.Column<bool>(type: "bit", nullable: false),
+                    ServerId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Discounts",
                 columns: table => new
                 {
@@ -39,14 +64,44 @@ namespace ByteTech.Infrastructure.Migrations
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    MinimumOrderAmount = table.Column<int>(type: "int", nullable: true),
-                    MaximumDiscountAmount = table.Column<int>(type: "int", nullable: true),
-                    UsageLimit = table.Column<int>(type: "int", nullable: false),
+                    MinimumOrderAmount = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: true),
+                    MaximumDiscountAmount = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: true),
+                    UsageLimit = table.Column<int>(type: "int", nullable: true),
                     UsageCount = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Discounts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Locations",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Locations", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Materials",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Cost = table.Column<decimal>(type: "decimal(18,2)", maxLength: 200, precision: 18, scale: 2, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Materials", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -84,17 +139,45 @@ namespace ByteTech.Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Vatable = table.Column<bool>(type: "bit", nullable: false),
+                    isSeniorCitizen = table.Column<bool>(type: "bit", nullable: false),
+                    BasicCommodity = table.Column<bool>(type: "bit", nullable: false),
+                    isPWD = table.Column<bool>(type: "bit", nullable: false),
                     SKU = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Barcode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    Barcode = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Stock = table.Column<int>(type: "int", nullable: false),
                     MinimumStockLevel = table.Column<int>(type: "int", nullable: false),
                     CostPrice = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     SellingPrice = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DateModified = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    DateModified = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedBy = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    ModifiedBy = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    IsInactive = table.Column<bool>(type: "bit", nullable: false),
+                    TrackInventory = table.Column<bool>(type: "bit", nullable: false),
+                    LocationId = table.Column<int>(type: "int", nullable: true),
+                    MaterialId = table.Column<int>(type: "int", nullable: true),
+                    Picture = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    PictureName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    PictureFileType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    LookupCode = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    SoldByAmount = table.Column<bool>(type: "bit", nullable: false),
+                    Remarks = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    LastSold = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    NotDiscountableAtPOS = table.Column<bool>(type: "bit", nullable: false),
+                    ExcludeFromOrderSlip = table.Column<bool>(type: "bit", nullable: false),
+                    InclusiveOfServiceCharge = table.Column<bool>(type: "bit", nullable: false),
+                    ServerId = table.Column<int>(type: "int", nullable: false),
+                    Section = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    RegularPrice = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    WholeSalePrice = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    PriceA = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    PriceB = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    PriceC = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    Cost = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -105,6 +188,18 @@ namespace ByteTech.Infrastructure.Migrations
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Products_Locations_LocationId",
+                        column: x => x.LocationId,
+                        principalTable: "Locations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Products_Materials_MaterialId",
+                        column: x => x.MaterialId,
+                        principalTable: "Materials",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -123,7 +218,6 @@ namespace ByteTech.Infrastructure.Migrations
                     TotalAmount = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     DiscountId = table.Column<int>(type: "int", nullable: true),
                     Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DiscountId1 = table.Column<int>(type: "int", nullable: true),
                     UserId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -136,11 +230,6 @@ namespace ByteTech.Infrastructure.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
-                        name: "FK_Orders_Discounts_DiscountId1",
-                        column: x => x.DiscountId1,
-                        principalTable: "Discounts",
-                        principalColumn: "Id");
-                    table.ForeignKey(
                         name: "FK_Orders_Users_CustomerId",
                         column: x => x.CustomerId,
                         principalTable: "Users",
@@ -151,6 +240,35 @@ namespace ByteTech.Infrastructure.Migrations
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Inventories",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<int>(type: "int", precision: 18, scale: 2, nullable: false),
+                    LocationId = table.Column<int>(type: "int", nullable: false),
+                    Stock = table.Column<int>(type: "int", nullable: false),
+                    ReservedStock = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Inventories", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Inventories_Locations_LocationId",
+                        column: x => x.LocationId,
+                        principalTable: "Locations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Inventories_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -216,9 +334,37 @@ namespace ByteTech.Infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Customers_Name",
+                table: "Customers",
+                column: "Name");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Discounts_Code",
                 table: "Discounts",
                 column: "Code",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Inventories_LocationId",
+                table: "Inventories",
+                column: "LocationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Inventories_ProductId_LocationId",
+                table: "Inventories",
+                columns: new[] { "ProductId", "LocationId" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Locations_Name",
+                table: "Locations",
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Materials_Name",
+                table: "Materials",
+                column: "Name",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -242,11 +388,6 @@ namespace ByteTech.Infrastructure.Migrations
                 column: "DiscountId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_DiscountId1",
-                table: "Orders",
-                column: "DiscountId1");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Orders_OrderNumber",
                 table: "Orders",
                 column: "OrderNumber",
@@ -263,9 +404,32 @@ namespace ByteTech.Infrastructure.Migrations
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Products_Barcode",
+                table: "Products",
+                column: "Barcode",
+                unique: true,
+                filter: "[Barcode] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",
                 table: "Products",
                 column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_LocationId",
+                table: "Products",
+                column: "LocationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_LookupCode",
+                table: "Products",
+                column: "LookupCode",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_MaterialId",
+                table: "Products",
+                column: "MaterialId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_SKU",
@@ -290,6 +454,12 @@ namespace ByteTech.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Customers");
+
+            migrationBuilder.DropTable(
+                name: "Inventories");
+
+            migrationBuilder.DropTable(
                 name: "OrderItems");
 
             migrationBuilder.DropTable(
@@ -303,6 +473,12 @@ namespace ByteTech.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Locations");
+
+            migrationBuilder.DropTable(
+                name: "Materials");
 
             migrationBuilder.DropTable(
                 name: "Discounts");

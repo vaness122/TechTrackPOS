@@ -40,9 +40,6 @@
             panel4 = new Panel();
             pictureBox2 = new PictureBox();
             label4 = new Label();
-            panel5 = new Panel();
-            pictureBox4 = new PictureBox();
-            label5 = new Label();
             panel6 = new Panel();
             pictureBox5 = new PictureBox();
             label6 = new Label();
@@ -58,6 +55,9 @@
             btnDiscount = new Button();
             pictureBox6 = new PictureBox();
             label10 = new Label();
+            btnCustomers = new Button();
+            pictureBox7 = new PictureBox();
+            label11 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -65,8 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel7.SuspendLayout();
@@ -74,6 +72,7 @@
             panel9.SuspendLayout();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -189,37 +188,6 @@
             label4.Size = new Size(48, 15);
             label4.TabIndex = 2;
             label4.Text = "Invoice";
-            // 
-            // panel5
-            // 
-            panel5.BackColor = SystemColors.ButtonHighlight;
-            panel5.Controls.Add(pictureBox4);
-            panel5.Controls.Add(label5);
-            panel5.Location = new Point(387, 45);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(119, 85);
-            panel5.TabIndex = 4;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.InitialImage = null;
-            pictureBox4.Location = new Point(34, 8);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(36, 37);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 6;
-            pictureBox4.TabStop = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(24, 48);
-            label5.Name = "label5";
-            label5.Size = new Size(66, 15);
-            label5.TabIndex = 5;
-            label5.Text = "Customers";
             // 
             // panel6
             // 
@@ -371,11 +339,45 @@
             label10.TabIndex = 12;
             label10.Text = "Discount";
             // 
+            // btnCustomers
+            // 
+            btnCustomers.BackColor = SystemColors.Window;
+            btnCustomers.ForeColor = SystemColors.ActiveCaptionText;
+            btnCustomers.Location = new Point(387, 47);
+            btnCustomers.Name = "btnCustomers";
+            btnCustomers.Size = new Size(119, 81);
+            btnCustomers.TabIndex = 17;
+            btnCustomers.UseVisualStyleBackColor = false;
+            btnCustomers.Click += btnCustomers_Click;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.InitialImage = null;
+            pictureBox7.Location = new Point(422, 54);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(36, 37);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 18;
+            pictureBox7.TabStop = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(411, 94);
+            label11.Name = "label11";
+            label11.Size = new Size(64, 15);
+            label11.TabIndex = 19;
+            label11.Text = "Customers";
+            // 
             // Admin_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(983, 509);
+            Controls.Add(label11);
+            Controls.Add(pictureBox7);
+            Controls.Add(btnCustomers);
             Controls.Add(label10);
             Controls.Add(pictureBox6);
             Controls.Add(btnDiscount);
@@ -383,7 +385,6 @@
             Controls.Add(button1);
             Controls.Add(panel7);
             Controls.Add(panel6);
-            Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -400,9 +401,6 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -414,6 +412,7 @@
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -430,7 +429,6 @@
         private Label label4;
         private Panel panel5;
         private Panel panel6;
-        private Label label5;
         private Label label6;
         private Panel panel7;
         private Panel panel10;
@@ -449,5 +447,9 @@
         private Button btnDiscount;
         private PictureBox pictureBox6;
         private Label label10;
+        private Label label11;
+        private PictureBox pictureBox7;
+        private Label label5;
+        private Button btnCustomers;
     }
 }
